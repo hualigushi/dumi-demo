@@ -1,0 +1,25 @@
+# 项目名
+name: dumi-demo
+
+# 只有在master分支发生push事件时触发
+on:
+  push:
+    branches:
+      - main # default branch
+
+
+# 工作流
+jobs:
+  deploy:
+    runs-on: ubuntu-latest # 运行环境
+    steps:
+      - uses: actions/checkout@v3
+      - run: npm install
+      # 文档编译命令，如果是 react 模板需要修改为 npm run docs:build
+      - run: npm run docs:build
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # 文档目录，如果是 react 模板需要修改为 docs-dist
+          publish_dir: ./docs-dist
