@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdumi_demo=self.webpackChunkdumi_demo||[]).push([[703],{93703:function(r,o,n){n.r(o),n.d(o,{Foo:function(){return d}});var c=n(67294),u=n(85893),t=function(s){return(0,u.jsx)("h4",{children:s.title})},d=t}}]);
