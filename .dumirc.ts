@@ -5,11 +5,36 @@ export default defineConfig({
   outputPath: 'docs-dist',
   themeConfig: {
     name: 'dumi-demo',
-    nav: [
-      { title: '介绍', link: '/guide' },
-      { title: '组件', link: '/components/Foo' }, // components会默认自动对应到src文件夹
-    ],
+    // nav: {
+    //   mode: 'override',
+    //   value: [
+    //     {
+    //       title: 'Docs',
+    //       link: '/docs/api/api-api',
+    //       children: [
+    //         {
+    //           title: 'API',
+    //           link:'/docs/api/api-api',
+    //         },
+    //         {
+    //           title: 'Guides',
+    //           link:'/docs/guides/guides-debug',
+    //           // children: [
+    //           //   {
+    //           //     title: 'Guides',
+    //           //     link:'/docs/guides/guides-debug'
+    //           //   }
+    //           // ],
+    //         },
+    //       ]
+    //     },
+    //     {
+    //       title: 'Blog',
+    //       link: '/blog/umi-4-rc',
+    //     },
+    //   ]
+    // },
   },
-  base: process.env.NODE_ENV === 'production' ? `/${repo}/` : '/',
-  publicPath: process.env.NODE_ENV === 'production' ? `/${repo}/` : '/',
-});
+    base: process.env.NODE_ENV === 'production' ? `/${repo}/` : '/',
+    publicPath: process.env.NODE_ENV === 'production' ? `/${repo}/` : '/',
+  });
